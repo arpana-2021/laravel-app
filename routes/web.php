@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/hello', function () {
-    return "Hello World";
+    return '<h1>Hello World</h1>';
 });
+Route::get('/','PagesController@index');
 
+Route::get('/about','PagesController@about');
+
+Route::get('/services', 'PagesController@services');
+Route::resource('posts','PostsController');
+
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
